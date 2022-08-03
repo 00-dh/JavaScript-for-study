@@ -1,1 +1,1 @@
-# JavaScript-for-study
+```console.log("JavaScriptForStudy")```
