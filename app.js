@@ -1,5 +1,5 @@
 const word = document.querySelector("h1");
-const body = document.body;
+
 const superEventHandler = {
   handleMouseEnter: function () {
     word.innerText = "The mouse is here!";
@@ -22,5 +22,5 @@ const superEventHandler = {
 
 word.addEventListener("mouseleave", superEventHandler.handleMouseLeave);
 word.addEventListener("mouseenter", superEventHandler.handleMouseEnter);
-body.addEventListener("contextmenu", superEventHandler.handleDbClick);
+window.addEventListener("contextmenu", superEventHandler.handleDbClick);
 window.addEventListener("resize", superEventHandler.handleResize);
