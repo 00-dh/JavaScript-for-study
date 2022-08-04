@@ -1,29 +1,26 @@
-const calculator = {
-  add: function (a, b) {
-    return a + b;
+const word = document.querySelector("h1");
+const body = document.body;
+const superEventHandler = {
+  handleMouseEnter: function () {
+    word.innerText = "The mouse is here!";
+    word.style.color = "green";
   },
-  min: function (a, b) {
-    return a - b;
+  handleMouseLeave: function () {
+    word.innerText = "The mouse is gone!";
+    word.style.color = "blue";
   },
-  times: function (a, b) {
-    return a * b;
+  handleDbClick: function () {
+    word.innerText = "That was a right click!";
+    word.style.color = "orange";
   },
-  div: function (a, b) {
-    return a / b;
-  },
-  power: function (a, b) {
-    return a ** b;
+
+  handleResize: function () {
+    word.innerText = "You just resized!";
+    word.style.color = "purple";
   },
 };
 
-const addResult = calculator.add(2, 2);
-const minResult = calculator.min(2, 2);
-const timesResult = calculator.times(2, 2);
-const divResult = calculator.div(2, 2);
-const powerResult = calculator.power(2, 2);
-
-console.log(addResult);
-console.log(minResult);
-console.log(timesResult);
-console.log(divResult);
-console.log(powerResult);
+word.addEventListener("mouseleave", superEventHandler.handleMouseLeave);
+word.addEventListener("mouseenter", superEventHandler.handleMouseEnter);
+body.addEventListener("contextmenu", superEventHandler.handleDbClick);
+window.addEventListener("resize", superEventHandler.handleResize);
