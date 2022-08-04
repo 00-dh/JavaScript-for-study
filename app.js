@@ -1,26 +1,29 @@
-const word = document.querySelector("h1");
+// <⚠️ DONT DELETE THIS ⚠️>
+const colors = ["#1abc9c", "#3498db", "#9b59b6", "#f39c12", "#e74c3c"];
+// <⚠️ /DONT DELETE THIS ⚠️>
+
+const title = document.querySelector("h2");
 
 const superEventHandler = {
   handleMouseEnter: function () {
-    word.innerText = "The mouse is here!";
-    word.style.color = "green";
+    title.innerText = "The mouse is here!";
+    title.style.color = colors[0];
   },
   handleMouseLeave: function () {
-    word.innerText = "The mouse is gone!";
-    word.style.color = "blue";
+    title.innerText = "The mouse is gone!";
+    title.style.color = colors[1];
+  },
+  handleResize: function () {
+    title.innerText = "You just resized!";
+    title.style.color = colors[2];
   },
   handleDbClick: function () {
-    word.innerText = "That was a right click!";
-    word.style.color = "orange";
-  },
-
-  handleResize: function () {
-    word.innerText = "You just resized!";
-    word.style.color = "purple";
+    title.innerText = "That was a right click!";
+    title.style.color = colors[3];
   },
 };
 
-word.addEventListener("mouseleave", superEventHandler.handleMouseLeave);
-word.addEventListener("mouseenter", superEventHandler.handleMouseEnter);
+title.addEventListener("mouseleave", superEventHandler.handleMouseLeave);
+title.addEventListener("mouseenter", superEventHandler.handleMouseEnter);
 window.addEventListener("contextmenu", superEventHandler.handleDbClick);
 window.addEventListener("resize", superEventHandler.handleResize);
