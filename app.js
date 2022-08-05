@@ -1,29 +1,22 @@
-// <⚠️ DONT DELETE THIS ⚠️>
-const colors = ["#1abc9c", "#3498db", "#9b59b6", "#f39c12", "#e74c3c"];
-// <⚠️ /DONT DELETE THIS ⚠️>
+const h2 = document.querySelector("h2");
+const body = document.querySelector("body");
 
-const title = document.querySelector("h2");
+function handleResize() {
+  let bodyWidth = window.innerWidth;
+  if (bodyWidth >= 500 && bodyWidth < 813) {
+    body.classList.add("blue");
+    body.classList.remove("purple");
+    body.classList.remove("yellow");
+  } else if (bodyWidth >= 813 && bodyWidth < 1126) {
+    body.classList.add("purple");
+    body.classList.remove("yellow");
+    body.classList.remove("blue");
+  } else if (1126 <= bodyWidth) {
+    body.classList.add("yellow");
+    body.classList.remove("purple");
+    body.classList.remove("blue");
+  }
+}
 
-const superEventHandler = {
-  handleMouseEnter: function () {
-    title.innerText = "The mouse is here!";
-    title.style.color = colors[0];
-  },
-  handleMouseLeave: function () {
-    title.innerText = "The mouse is gone!";
-    title.style.color = colors[1];
-  },
-  handleResize: function () {
-    title.innerText = "You just resized!";
-    title.style.color = colors[2];
-  },
-  handleDbClick: function () {
-    title.innerText = "That was a right click!";
-    title.style.color = colors[3];
-  },
-};
-
-title.addEventListener("mouseleave", superEventHandler.handleMouseLeave);
-title.addEventListener("mouseenter", superEventHandler.handleMouseEnter);
-window.addEventListener("contextmenu", superEventHandler.handleDbClick);
-window.addEventListener("resize", superEventHandler.handleResize);
+handleResize();
+window.addEventListener("resize", handleResize);
