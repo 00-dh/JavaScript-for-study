@@ -1,16 +1,15 @@
-const h2 = document.querySelector("h2");
 const body = document.querySelector("body");
 
-function addAndRemoveEditor(color) {
-  if (color === "blue") {
+function addAndRemoveEditor(colorName) {
+  if (colorName === "blue") {
     body.classList.add("blue");
     body.classList.remove("purple");
     body.classList.remove("yellow");
-  } else if (color === "purple") {
+  } else if (colorName === "purple") {
     body.classList.add("purple");
     body.classList.remove("yellow");
     body.classList.remove("blue");
-  } else if (color === "yellow") {
+  } else if (colorName === "yellow") {
     body.classList.add("yellow");
     body.classList.remove("purple");
     body.classList.remove("blue");
