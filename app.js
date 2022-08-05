@@ -1,6 +1,6 @@
 const body = document.querySelector("body");
 
-function addAndRemoveEditor(colorName) {
+function colorEditor(colorName) {
   if (colorName === "blue") {
     body.classList.add("blue");
     body.classList.remove("purple");
@@ -19,11 +19,11 @@ function addAndRemoveEditor(colorName) {
 function handleResize() {
   let bodyWidth = window.innerWidth;
   if (bodyWidth >= 500 && bodyWidth < 813) {
-    addAndRemoveEditor("blue");
+    colorEditor("blue");
   } else if (bodyWidth >= 813 && bodyWidth < 1126) {
-    addAndRemoveEditor("purple");
+    colorEditor("purple");
   } else if (1126 <= bodyWidth) {
-    addAndRemoveEditor("yellow");
+    colorEditor("yellow");
   }
 }
 
