@@ -1,4 +1,5 @@
 const body = document.querySelector("body");
+const WidthValue = document.querySelector(".width_value");
 
 function colorEditor(colorName) {
   if (colorName === "blue") {
@@ -18,6 +19,7 @@ function colorEditor(colorName) {
 
 function handleResize() {
   let bodyWidth = window.innerWidth;
+  WidthValue.innerText = `You're Width length is now ${bodyWidth}`;
   if (bodyWidth >= 500 && bodyWidth < 813) {
     colorEditor("blue");
   } else if (bodyWidth >= 813 && bodyWidth < 1126) {
