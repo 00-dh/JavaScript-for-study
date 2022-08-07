@@ -15,6 +15,10 @@ h2 {
   background-color: rgb(232, 176, 17);
 }
 
+.tomato {
+  background-color: tomato;
+}
+
 .color_manual {
   display: flex;
   display: block;
