@@ -1,32 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="style.css" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
   <body>
-    <h2 class="word">Hello!</h2>
-    <h2 class="width_value"></h2>
-    <div class="color_manual">
-      <div>
-        <span>If you're width length is smaller than 813px will be</span>
-        <span class="blue">blue</span>
+    <h1>Random Number Game</h1>
+    <form>
+      <div class="generate_nb">
+        <span>Generate a number between 0 and</span>
+        <input type="number" min="0" />
       </div>
-      <div>
-        <span
-          >If you're width length is greater than 813px and smaller than 1126px
-          will be</span
-        >
-        <span class="purple">purple</span>
+      <div class="guess_nb">
+        <span>Guess the number</span>
+        <input tpye="number" />
+        <button>Play!</button>
       </div>
-      <div>
-        <span>If you're width length is greater than will be</span>
-        <span class="yellow">yellow</span>
-      </div>
-    </div>
+    </form>
+    <span class="message"></span>
     <script src="app.js"></script>
   </body>
 </html>
