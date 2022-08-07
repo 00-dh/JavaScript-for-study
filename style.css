@@ -21,4 +21,23 @@ h2 {
   position: absolute;
   bottom: 0px;
   color: white;
+  background-color: rgb(0, 0, 0, 0.3);
+  border-radius: 20px;
+  flex-wrap: nowrap;
+}
+
+.color_manual > div {
+  margin: 0px 10px;
+}
+
+.color_manual > div:first-child {
+  margin-top: 10px;
+  margin-bottom: 33.3px;
+}
+
+.color_manual > div:nth-child(2) {
+  margin-bottom: 33.3px;
+}
+.color_manual > div:last-child {
+  margin-bottom: 10px;
 }
