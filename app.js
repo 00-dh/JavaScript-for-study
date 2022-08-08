@@ -12,9 +12,15 @@ const winOrLose = document.querySelector(".win_or_lose");
 function handleClickPlay(event) {
   const machineNumber = Math.round(Math.random() * GenerateNumber.value);
   event.preventDefault();
+<<<<<<< HEAD
   if (GuessNumber.value > GenerateNumber.value) {
     resultMessage.innerText =
       "please check your number.\n Isn't Guess number bigger than Generate number?";
+=======
+  resultMessage.innerText = `You chose: ${GuessNumber.value}, the machine chose: ${machineNumber}`;
+  if (parseInt(GuessNumber.value) === machineNumber) {
+    winOrLose.innerText = "You win!";
+>>>>>>> parent of 9dab24a (add caution text (if guess number bigger than generate number))
   } else {
     resultMessage.innerText = `You chose: ${GuessNumber.value}, the machine chose: ${machineNumber}`;
     if (parseInt(GuessNumber.value) === machineNumber) {
