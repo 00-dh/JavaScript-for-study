@@ -1,3 +1,5 @@
+const playEvent = document.querySelector("form");
+const GenerateNumber = document.querySelector(".generate_nb input");
 const GuessNumber = document.querySelector(".guess_nb input");
 const resultMessage = document.querySelector(".message");
 const winOrLose = document.querySelector(".win_or_lose");
@@ -14,7 +16,7 @@ function handleClickPlay(event) {
 
   if (GuessValue > GenerateValue) {
     resultMessage.innerText =
-      "please check your number.\n Isn't Guess number bigger than Generate number?";
+      "⚠️please check your number.⚠️\n Isn't Guess number bigger than Generate number?";
     winOrLose.innerText = "";
     return 0;
   }
