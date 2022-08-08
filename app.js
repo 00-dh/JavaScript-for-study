@@ -11,7 +11,7 @@ function handleClickPlay(event) {
   if (parseInt(GuessNumber.value) === machineNumber) {
     winOrLose.innerText = "You win!";
   } else {
-    winOrLose.innerText = "You Lose";
+    winOrLose.innerText = "You Lose!";
   }
 }
 
