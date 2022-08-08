@@ -11,7 +11,7 @@
     <form>
       <div class="generate_nb">
         <span>Generate a number between 0 and</span>
-        <input type="number" min="0" />
+        <input required type="number" min="0" />
       </div>
       <div class="guess_nb">
         <span>Guess the number</span>
@@ -20,6 +20,9 @@
       </div>
     </form>
     <span class="message"></span>
+    <div>
+      <span class="win_or_lose"></span>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>
