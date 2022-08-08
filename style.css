@@ -1,0 +1,12 @@
+.generate_nb,
+.guess_nb,
+.message,
+.win_or_lose {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.generate_nb,
+.win_or_lose {
+  font-weight: bold;
+}
