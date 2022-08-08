@@ -5,14 +5,10 @@ const resultMessage = document.querySelector(".message");
 const winOrLose = document.querySelector(".win_or_lose");
 
 function handleClickPlay(event) {
+  const machineNumber = Math.round(Math.random() * GenerateNumber.value);
   event.preventDefault();
-  resultMessage.innerText = `You chose: ${
-    GuessNumber.value
-  }, the machine chose: ${Math.round(Math.random() * GenerateNumber.value)}`;
-  if (
-    parseInt(GuessNumber.value) ===
-    Math.round(Math.random() * GenerateNumber.value)
-  ) {
+  resultMessage.innerText = `You chose: ${GuessNumber.value}, the machine chose: ${machineNumber}`;
+  if (parseInt(GuessNumber.value) === machineNumber) {
     winOrLose.innerText = "You win!";
   } else {
     winOrLose.innerText = "You Lose";
