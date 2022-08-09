@@ -3,7 +3,8 @@ const GenerateNumber = document.querySelector(".generate_nb input");
 const GuessNumber = document.querySelector(".guess_nb input");
 const resultMessage = document.querySelector(".message");
 const winOrLose = document.querySelector(".win_or_lose");
-const count = document.querySelector(".win_or_lose__count");
+const winCountMessage = document.querySelector(".win_count");
+const loseCountMessage = document.querySelector(".lose_count");
 
 let winCount = 0;
 let loseCount = 0;
@@ -18,6 +19,8 @@ function handleClickPlay(event) {
     resultMessage.innerText =
       "⚠️please check your number.⚠️\n Isn't Guess number bigger than Generate number?";
     winOrLose.innerText = "";
+    winCountMessage.innerText = "";
+    loseCountMessage.innerText = "";
     return 0;
   }
   resultMessage.innerText = `You chose: ${GuessValue}, the machine chose: ${machineNumber}`;
@@ -28,7 +31,8 @@ function handleClickPlay(event) {
     winOrLose.innerText = "You Lose!";
     loseCount += 1;
   }
-  count.innerText = `win: ${winCount} times\n lose: ${loseCount} times`;
+  winCountMessage.innerText = `win: ${winCount} times`;
+  loseCountMessage.innerText = `lose: ${loseCount} times`;
 }
 
 playEvent.addEventListener("submit", handleClickPlay);
