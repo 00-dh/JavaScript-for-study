@@ -1,57 +1,30 @@
-const clock = document.querySelector("#clock");
+const colors = [
+  "#ef5777",
+  "#575fcf",
+  "#4bcffa",
+  "#34e7e4",
+  "#0be881",
+  "#f53b57",
+  "#3c40c6",
+  "#0fbcf9",
+  "#00d8d6",
+  "#05c46b",
+  "#ffc048",
+  "#ffdd59",
+  "#ff5e57",
+  "#d2dae2",
+  "#485460",
+  "#ffa801",
+  "#ffd32a",
+  "#ff3f34",
+];
 
-function nowTime() {
-  const nowDate = new Date();
-  const D_dayChristmas = new Date("12 / 25 / 2022");
-  const diffTime = D_dayChristmas - nowDate;
-  const D_dayCal = {
-    D_Date: function () {
-      let D_Dates = String(
-        Math.floor(diffTime / (1000 * 60 * 60 * 24))
-      ).padStart(2, "0");
+const btn = document.querySelector("button");
 
-      if (D_Dates <= 0) {
-        D_Dates = "00";
-      }
-      return D_Dates;
-    },
-
-    D_Hours: function () {
-      let D_Hours = String(
-        Math.floor((diffTime / (1000 * 60 * 60)) % 24)
-      ).padStart(2, "0");
-
-      if (D_Hours <= 0) {
-        D_Hours = "00";
-      }
-      return D_Hours;
-    },
-
-    D_Minutes: function () {
-      let D_Minutes = String(
-        Math.floor((diffTime / (1000 * 60)) % 60)
-      ).padStart(2, "0");
-
-      if (D_Minutes <= 0) {
-        D_Minutes = "00";
-      }
-      return D_Minutes;
-    },
-
-    D_Seconds: function () {
-      let D_Seconds = String(Math.floor((diffTime / 1000) % 60)).padStart(
-        2,
-        "0"
-      );
-
-      if (D_Seconds <= 0) {
-        D_Seconds = "00";
-      }
-      return D_Seconds;
-    },
-  };
-  clock.innerText = `${D_dayCal.D_Date()}d ${D_dayCal.D_Hours()}h ${D_dayCal.D_Minutes()}m ${D_dayCal.D_Seconds()}s`;
+function change_color() {
+  const randomColor1 = colors[Math.floor(Math.random() * colors.length)];
+  const randomColor2 = colors[Math.floor(Math.random() * colors.length)];
+  document.body.style.backgroundImage = `linear-gradient(0.25turn,${randomColor1},${randomColor2})`; //if not use 0.25turn gradient will be Vertical
 }
 
-nowTime();
-setInterval(nowTime, 1000);
+btn.addEventListener("click", change_color);
