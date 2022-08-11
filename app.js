@@ -21,10 +21,13 @@ const colors = [
 
 const btn = document.querySelector("button");
 
-function change_color() {
-  const randomColor1 = colors[Math.floor(Math.random() * colors.length)];
-  const randomColor2 = colors[Math.floor(Math.random() * colors.length)];
-  document.body.style.backgroundImage = `linear-gradient(0.25turn,${randomColor1},${randomColor2})`; //if not use 0.25turn gradient will be Vertical
+function change_color(event) {
+  const randomValue1 = Math.floor(Math.random() * colors.length);
+  const randomValue2 = Math.floor(Math.random() * colors.length);
+  const randomColor1 = colors[randomValue1];
+  const randomColor2 = colors[randomValue2];
+  document.body.style.backgroundImage = `linear-gradient(to right, ${randomColor1}, ${randomColor2})`;
+  let pos = colors.indexOf(randomColor1);
 }
 
 btn.addEventListener("click", change_color);
