@@ -2,7 +2,7 @@ const writeForm = document.querySelector(".todo_input");
 const writeInput = document.querySelector(".todo_input input");
 const todoList = document.querySelector(".todo_list");
 
-const todos = [];
+let todos = [];
 
 function inputValue(event) {
   event.preventDefault();
@@ -39,6 +39,7 @@ const savedTodo = localStorage.getItem("todo");
 
 if (savedTodo !== null) {
   const parseTodos = JSON.parse(savedTodo);
+  todos = parseTodos;
   parseTodos.forEach((item) => paintTodo(item));
 }
 
