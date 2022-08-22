@@ -35,4 +35,11 @@ function saveTodo() {
   localStorage.setItem("todo", JSON.stringify(todos));
 }
 
+const savedTodo = localStorage.getItem("todo");
+
+if (savedTodo !== null) {
+  const parseTodos = JSON.parse(savedTodo);
+  parseTodos.forEach((item) => paintTodo(item));
+}
+
 writeForm.addEventListener("submit", inputValue);
