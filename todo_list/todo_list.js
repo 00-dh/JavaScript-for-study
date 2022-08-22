@@ -2,11 +2,16 @@ const writeForm = document.querySelector(".todo_input");
 const writeInput = document.querySelector(".todo_input input");
 const todoList = document.querySelector(".todo_list");
 
+const todos = [];
+
 function inputValue(event) {
   event.preventDefault();
   const input_value = writeInput.value;
-  paintTodo(input_value);
+  todos.push(input_value);
+  console.log(todos);
   writeInput.value = "";
+  paintTodo(input_value);
+  saveTodo();
 }
 
 function paintTodo(todo) {
@@ -24,6 +29,10 @@ function paintTodo(todo) {
 function deleteTodo(event) {
   const li = event.target.parentNode;
   li.remove();
+}
+
+function saveTodo() {
+  localStorage.setItem("todo", JSON.stringify(todos));
 }
 
 writeForm.addEventListener("submit", inputValue);
