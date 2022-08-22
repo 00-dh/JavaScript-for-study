@@ -32,8 +32,9 @@ function paintTodo(todo) {
 
 function deleteTodo(event) {
   const li = event.target.parentNode;
-  console.log(li.id);
+  todos = todos.filter((toDo) => toDo.id !== parseInt(li.id));
   li.remove();
+  saveTodo();
 }
 
 function saveTodo() {
