@@ -7,18 +7,22 @@ let todos = [];
 function inputValue(event) {
   event.preventDefault();
   const input_value = writeInput.value;
-  todos.push(input_value);
-  console.log(todos);
   writeInput.value = "";
-  paintTodo(input_value);
+  const newObj = {
+    text: input_value,
+    id: Date.now(),
+  };
+  todos.push(newObj);
+  paintTodo(newObj);
   saveTodo();
 }
 
 function paintTodo(todo) {
   const li = document.createElement("li");
+  li.id = todo.id;
   todoList.appendChild(li);
   const span = document.createElement("span");
-  span.innerText = todo;
+  span.innerText = todo.text;
   const button = document.createElement("button");
   button.innerText = "❌";
   button.addEventListener("click", deleteTodo);
@@ -28,6 +32,7 @@ function paintTodo(todo) {
 
 function deleteTodo(event) {
   const li = event.target.parentNode;
+  console.log(li.id);
   li.remove();
 }
 
