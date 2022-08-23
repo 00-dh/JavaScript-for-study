@@ -12,16 +12,21 @@ function handleSumbitList(event) {
   event.preventDefault();
   const inputList = writeInput.value;
   writeInput.value = "";
-  paintList(inputList);
-  list.push(inputList);
+  const newList = {
+    id: Date.now(),
+    text: inputList,
+  };
+  paintList(newList);
+  list.push(newList);
   saveList();
 }
 
 function paintList(content) {
   const li = document.createElement("li");
+  li.id = content.id;
   listIndex.appendChild(li);
   const span = document.createElement("span");
-  span.innerText = content;
+  span.innerText = content.text;
   li.appendChild(span);
   const button = document.createElement("button");
   button.innerText = "❌";
@@ -31,7 +36,9 @@ function paintList(content) {
 
 function deleteList(event) {
   const li = event.target.parentNode;
+  list = list.filter((list) => list.id !== parseInt(li.id));
   li.remove();
+  saveList();
 }
 
 const savedList = localStorage.getItem("list");
