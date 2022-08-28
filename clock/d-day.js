@@ -1,6 +1,6 @@
 const D_day = document.querySelector(".d-day_1");
 const D_day2 = document.querySelector(".d-day_2");
-const form = document.querySelector("form");
+const form = document.querySelector(".d-day__calculate");
 const result_d_day = document.querySelector(".final_d-day");
 
 function calculator(event) {
