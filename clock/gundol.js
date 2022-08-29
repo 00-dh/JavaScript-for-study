@@ -12,7 +12,11 @@ function count() {
   const total_mil =
     (disCharge.valueAsNumber - enlist.valueAsNumber) / (1000 * 60 * 60 * 24);
   const now_mil = (Date.now() - enlist.valueAsNumber) / (1000 * 60 * 60 * 24);
-  milD_day.innerText = `${(1 - now_mil / total_mil) * 100}%`;
+  let percentMil = (now_mil / total_mil) * 100;
+  if (percentMil >= 100) {
+    percentMil = 100;
+  }
+  milD_day.innerText = `${percentMil}%`;
 }
 
 milTime.addEventListener("submit", sayHello);
