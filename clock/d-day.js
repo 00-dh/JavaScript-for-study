@@ -1,6 +1,6 @@
 const D_day = document.querySelector(".d-day_1");
 const D_day2 = document.querySelector(".d-day_2");
-const form = document.querySelector(".d-day__calculate");
+const Dday = document.querySelector(".d-day__calculate");
 const result_d_day = document.querySelector(".final_d-day");
 
 function calculator(event) {
@@ -17,4 +17,4 @@ function calculator(event) {
   result_d_day.innerText = `${Math.abs(finalD_day)}일 ${string}`;
 }
 
-form.addEventListener("submit", calculator);
+Dday.addEventListener("submit", calculator);
