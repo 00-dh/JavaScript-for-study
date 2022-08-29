@@ -8,6 +8,7 @@
   </head>
   <body>
     <h1 class="clock"></h1>
+
     <form class="d-day__calculate">
       <h1>D-Day 계산하기</h1>
       <input required type="date" class="d-day_1" />
@@ -21,11 +22,13 @@
     <form class="military_time">
       <h1>군돌이</h1>
       <span>입대일: </span>
-      <input type="date" />
+      <input class="enlist" type="date" />
       <span>전역일: </span>
-      <input type="date" />
-      <p>D-DAY:</p>
-      <span></span>
+      <input class="discharge" type="date" />
+      <button>계산</button>
+      <br />
+      <span>D-DAY:</span>
+      <span class="mil__D-day"></span>
     </form>
     <script src="clock.js"></script>
     <script src="d-day.js"></script>
