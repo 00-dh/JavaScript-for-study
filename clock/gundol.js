@@ -5,9 +5,11 @@ const milD_day = milTime.querySelector(".mil__D-day");
 
 function sayHello(event) {
   event.preventDefault();
-  const milD_dayValue =
-    (disCharge.valueAsNumber - enlist.valueAsNumber) / (1000 * 60 * 60 * 24);
-  milD_day.innerText = milD_dayValue;
+  console.log(enlist.valueAsNumber / 1000);
+  console.log(disCharge.valueAsDate);
+  const date = new Date();
+  const today = date.getDate();
+  console.log(today.valueAsNumber);
 }
 
 milTime.addEventListener("submit", sayHello);
