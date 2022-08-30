@@ -15,8 +15,10 @@ function count() {
   let percentMil = (now_mil / total_mil) * 100;
   if (percentMil >= 100) {
     percentMil = 100;
+  } else if (percentMil <= 0) {
+    percentMil = 0;
   }
-  milD_day.innerText = `${percentMil}%`;
+  milD_day.innerText = `${percentMil.toFixed(5)}%`;
 }
 
 milTime.addEventListener("submit", sayHello);
