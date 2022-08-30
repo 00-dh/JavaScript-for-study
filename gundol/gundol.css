@@ -6,6 +6,7 @@ body{
 .status-bar{
     display:flex;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 img{
@@ -27,4 +28,17 @@ img{
 
 .profile-bar__info__name{
     font-weight: bold;
+}
+
+.d-day{
+    margin-left: 5%;
+    width: 90%;
+    height: 80px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: #53494A;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
 }
