@@ -16,7 +16,7 @@ function sayHello(event) {
   if (enlist.valueAsNumber > disCharge.valueAsNumber) {
     return console.log("error");
   }
-  setInterval(count, 100);
+  setInterval(count, 10);
 }
 
 function count() {
@@ -26,10 +26,13 @@ function count() {
   let percentMil = (now_mil / total_mil) * 100;
   if (percentMil >= 100) {
     percentMil = 100;
+    milPercent.innerText = "100%";
   } else if (percentMil <= 0) {
     percentMil = 0;
+    milPercent.innerText = "0%";
+  } else {
+    milPercent.innerText = `${percentMil.toFixed(7)}%`;
   }
-  milPercent.innerText = `${percentMil.toFixed(5)}%`;
 }
 
 milTime.addEventListener("submit", sayHello);
