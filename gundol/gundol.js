@@ -4,6 +4,7 @@ const discharge = document.querySelector(".discharge");
 const htmlD_day = document.querySelector(".D-day");
 const home = document.querySelector(".home_image");
 const htmlpercentage = document.querySelector(".percentage");
+const percentageValue = document.querySelector(".percent__percentage__value");
 
 function gundol(event) {
   event.preventDefault();
@@ -28,6 +29,9 @@ function percent() {
   } else {
     htmlpercentage.innerText = `${(per * 100).toFixed(7)}%`;
   }
+  document.querySelector(".percent__percentage__value").style.width =
+    (per * 100).toFixed(7) + "%";
+  htmlpercentage.style.left = (per * 100).toFixed(7) + "%";
 }
 
 calPeriod.addEventListener("submit", gundol);

@@ -72,7 +72,6 @@ img {
 }
 
 .percent__percentage__value{
-    width: 61.1187791%;
     height: 20px;
     background-color: #90C8B1;
     position: absolute;
@@ -83,7 +82,6 @@ img {
 .percent__percentage > span{
     text-align: center;
     position: absolute;
-    left: 61.1187791%;
     transform: translate(-50%, 150%);
     color:#90C8B1;
     font-weight: 500;
