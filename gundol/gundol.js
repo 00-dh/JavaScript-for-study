@@ -5,9 +5,11 @@ const htmlD_day = document.querySelector(".D-day");
 const home = document.querySelector(".home_image");
 const htmlpercentage = document.querySelector(".percentage");
 const percentageValue = document.querySelector(".percent__percentage__value");
+const dischargeDay = document.querySelector(".discahrge_day");
 
 function gundol(event) {
   event.preventDefault();
+  dischargeDay.innerText = enlist.value;
   const D_day = (discharge.valueAsNumber - Date.now()) / (1000 * 60 * 60 * 24);
   if (Math.ceil(D_day) <= 0) {
     htmlD_day.innerText = `🎉 전역을 축하합니다`;
@@ -24,8 +26,8 @@ function percent() {
     (Date.now() - enlist.valueAsNumber) /
     (discharge.valueAsNumber - enlist.valueAsNumber);
 
-  if (per >= 100) {
-    htmlpercentage.innerText = `${(per * 100).toFixed(7)}%`;
+  if (per * 100 >= 100) {
+    htmlpercentage.innerText = `100%`;
   } else {
     htmlpercentage.innerText = `${(per * 100).toFixed(7)}%`;
   }
