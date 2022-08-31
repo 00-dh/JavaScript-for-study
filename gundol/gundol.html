@@ -20,17 +20,24 @@
           <span>상병</span>
           <span class="profile-bar__info__name">군돌이</span>
         </div>
-        <div>
-          <span>입대: 2020-09-08</span>
+        <form class="calculate">
+          <span>입대: </span>
+          <input class="enlist" type="date" />
           <br />
-          <span>전역: 2022-03-07</span>
-        </div>
+          <span>전역: </span>
+          <input class="discharge" type="date" />
+          <br />
+          <button>계산</button>
+        </form>
       </div>
     </div>
     <div class="d-day">
       <div>
-        <i class="fa-solid fa-house-chimney-window" style="color: #90c5af"></i>
-        <span>D-223</span>
+        <i
+          class="home_image fa-solid fa-house-chimney-window"
+          style="color: #90c5af"
+        ></i>
+        <span class="D-day">D-223</span>
       </div>
       <div>
         <i class="fa-solid fa-bars"></i>
@@ -43,9 +50,10 @@
         <span>2022년 03월 07일</span>
       </div>
       <div class="percent__percentage">
-        <span>61.1187791%</span>
+        <span class="percentage">61.1187791%</span>
         <div class="percent__percentage__value"></div>
       </div>
     </div>
+    <script src="gundol.js"></script>
   </body>
 </html>

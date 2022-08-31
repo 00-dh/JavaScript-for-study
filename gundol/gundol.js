@@ -1,38 +1,33 @@
-const milTime = document.querySelector(".military_time");
-const enlist = milTime.querySelector(".enlist");
-const disCharge = milTime.querySelector(".discharge");
-const milPercent = milTime.querySelector(".mil__percent");
-const milD_day = milTime.querySelector(".mil__D-day");
+const calPeriod = document.querySelector(".calculate");
+const enlist = document.querySelector(".enlist");
+const discharge = document.querySelector(".discharge");
+const htmlD_day = document.querySelector(".D-day");
+const home = document.querySelector(".home_image");
+const htmlpercentage = document.querySelector(".percentage");
 
-function sayHello(event) {
+function gundol(event) {
   event.preventDefault();
-  let milDday = (disCharge.valueAsNumber - Date.now()) / (1000 * 60 * 60 * 24);
-  if (Math.ceil(milDday) <= 0) {
-    milD_day.innerText = "전역을 축하합니다.";
+  const D_day = (discharge.valueAsNumber - Date.now()) / (1000 * 60 * 60 * 24);
+  if (Math.ceil(D_day) <= 0) {
+    htmlD_day.innerText = `🎉 전역을 축하합니다`;
+    home.classList.add("hidden");
   } else {
-    milDday = Math.ceil(milDday);
-    milD_day.innerText = `${milDday}`;
+    htmlD_day.innerText = `D-${Math.ceil(D_day)}`;
+    home.classList.remove("hidden");
   }
-  if (enlist.valueAsNumber > disCharge.valueAsNumber) {
-    return console.log("error");
-  }
-  setInterval(count, 10);
+  setInterval(percent, 100);
 }
 
-function count() {
-  const total_mil =
-    (disCharge.valueAsNumber - enlist.valueAsNumber) / (1000 * 60 * 60 * 24);
-  const now_mil = (Date.now() - enlist.valueAsNumber) / (1000 * 60 * 60 * 24);
-  let percentMil = (now_mil / total_mil) * 100;
-  if (percentMil >= 100) {
-    percentMil = 100;
-    milPercent.innerText = "100%";
-  } else if (percentMil <= 0) {
-    percentMil = 0;
-    milPercent.innerText = "0%";
+function percent() {
+  const per =
+    (Date.now() - enlist.valueAsNumber) /
+    (discharge.valueAsNumber - enlist.valueAsNumber);
+
+  if (per >= 100) {
+    htmlpercentage.innerText = `${(per * 100).toFixed(7)}%`;
   } else {
-    milPercent.innerText = `${percentMil.toFixed(7)}%`;
+    htmlpercentage.innerText = `${(per * 100).toFixed(7)}%`;
   }
 }
 
-milTime.addEventListener("submit", sayHello);
+calPeriod.addEventListener("submit", gundol);
