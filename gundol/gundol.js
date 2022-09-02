@@ -45,8 +45,8 @@ function percent() {
     htmlpercentage.style.left = "100%";
     document.querySelector(".percent__percentage__value").style.width = "100%";
   } else {
-    htmlpercentage.innerText = `${(per * 100).toFixed(5)}%`;
-    htmlpercentage.style.left = (per * 100).toFixed(5) + "%";
+    htmlpercentage.innerText = `${(per * 100).toFixed(7)}%`;
+    htmlpercentage.style.left = (per * 100).toFixed(7) + "%";
     document.querySelector(".percent__percentage__value").style.width =
       (per * 100).toFixed(7) + "%";
   }
