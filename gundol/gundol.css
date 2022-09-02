@@ -86,6 +86,7 @@ img {
     color:#90C8B1;
     font-weight: 500;
     font-size: 12.5px;
+    text-overflow: clip;
 }
 
 .classes_mil{
@@ -101,4 +102,59 @@ img {
     font-weight: bold;
     display: flex;
     justify-content: space-between;
+}
+
+.classes_mil{
+    color:#D5D0D2;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+
+.percent_mil_1{
+    width: 45%;
+}
+
+.mil_percentage{
+    width: 100%;
+    height: 5px;
+    background-color: #7E7778;
+}
+
+.real_percentage{
+    background-color: #FBF2E4;
+    width: 28%;
+    height: 5px;
+    position: relative;
+}
+
+
+.percent_mil_text{
+    display: flex;
+    justify-content: space-between;
+    margin: 17.5px 0px;
+}
+
+.real_percentage > span{
+    position: absolute;
+    left: 28%;
+    margin-top: 5px;
+}
+
+.real_percentage_1{
+    background-color: #FBF2E4;
+    width: 21%; 
+    height: 5px;
+    position: relative;
+}
+
+.real_percentage_1 > span{
+    position: absolute;
+    left: 21%;
+    margin-top: 5px;
+}
+
+.bold{
+    font-weight: bold;
+    color:#D9D2D5;
 }
