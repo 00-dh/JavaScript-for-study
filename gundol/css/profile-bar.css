@@ -1,0 +1,15 @@
+.profile-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.profile-bar__info {
+    margin-bottom: 10px;
+    font-size: 26px;
+}
+
+.profile-bar__info__name {
+    font-weight: bold;
+}

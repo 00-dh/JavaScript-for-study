@@ -1,0 +1,13 @@
+.d-day {
+    margin-left: 5%;
+    width: 90%;
+    height: 60px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #463D3F;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+}
